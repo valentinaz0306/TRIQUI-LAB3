@@ -4,9 +4,6 @@ class Jugador2 extends Jugador {
         this.px=px;
         this.py=py;
     }
-    pintarse(){
-    fill(255,0,0);
-    rect(px,py,50,50);   
-    }
+  
     
     }
