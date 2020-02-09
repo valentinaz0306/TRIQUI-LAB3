@@ -7,10 +7,11 @@ this.py= py;
 pintarse(){
   if(this.tipo==1){
     fill(255);
-    ellipse(px,py,50,50);
+    ellipse(this.px +100,this.py+100,50,50);
   } else if(this.tipo==2){
     fill(255,0,0);
-    rect(px,py,50,50); 
+    rectMode(CENTER);
+    rect(this.px+100,this.py+100,50,50); 
   } 
 }
 setTipo(tipo){
