@@ -10,7 +10,6 @@ pintarse(){
     ellipse(this.px +100,this.py+100,50,50);
   } else if(this.tipo==2){
     fill(255,0,0);
-    rectMode(CENTER);
     rect(this.px+100,this.py+100,50,50); 
   } 
 }

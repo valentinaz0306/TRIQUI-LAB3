@@ -1,4 +1,5 @@
 let matriz = new Array(3);
+let turno=0;
 
 function setup(){
 createCanvas(600,600);
@@ -26,41 +27,71 @@ for (i=0;i<3;i++){
     for(j=0;j<3;j++){
         matriz[i][j].pintarse();
     }
+}    
 }
-    
-}
-
 function mousePressed(){
     // tipo 0 vacio
    //tipo 1 circulo
    //tipo 2 cuadrado
 
-if(mouseX>0&&mouseX<200 && mouseY>0 && mouseY<200){
-    matriz[0][0].setTipo(1);
+if(mouseX>0&&mouseX<200 && mouseY>0 && mouseY<200 && matriz[0][0].getTipo()==0){
+    matriz[0][0].setTipo(turno+1);
+    turno=(turno+1)%2;
+} 
+if(mouseX>200&&mouseX<400 && mouseY>0&& mouseY<200 && matriz[0][1].getTipo()==0){
+    matriz[0][1].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
-if(mouseX>200&&mouseX<400 && mouseY>0&& mouseY<200){
-    matriz[0][1].setTipo(2);
-}
-if(mouseX>400&&mouseX<600 && mouseY>0&& mouseY<200){
-    matriz[0][2].setTipo(1);
+if(mouseX>400&&mouseX<600 && mouseY>0&& mouseY<200 && matriz[0][2].getTipo()==0){
+    matriz[0][2].setTipo(turno+1);
+    turno=(turno+1)%2;
 } // col 1
-if(mouseX>0&&mouseX<200 && mouseY> 200&& mouseY<400){
-    matriz[1][0].setTipo(1);
+if(mouseX>0&&mouseX<200 && mouseY> 200&& mouseY<400 && matriz[1][0].getTipo()==0){
+    matriz[1][0].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
-if(mouseX>200&&mouseX<400 && mouseY> 200&& mouseY<400){
-    matriz[1][1].setTipo(1);
+if(mouseX>200&&mouseX<400 && mouseY> 200&& mouseY<400 && matriz[1][1].getTipo()==0){
+    matriz[1][1].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
-if(mouseX>400&&mouseX<600 && mouseY> 200&& mouseY<400){
-    matriz[1][2].setTipo(1);
+if(mouseX>400&&mouseX<600 && mouseY> 200&& mouseY<400 && matriz[1][2].getTipo()==0){
+    matriz[1][2].setTipo(turno+1);
+    turno=(turno+1)%2;
 }//col2
-if(mouseX>0&&mouseX<200 && mouseY>400&& mouseY<600){
-    matriz[2][0].setTipo(1);
+if(mouseX>0&&mouseX<200 && mouseY>400&& mouseY<600 && matriz[2][0].getTipo()==0){
+    matriz[2][0].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
-if(mouseX>200 && mouseX<400 && mouseY>400&& mouseY<600){
-matriz[2][1].setTipo(1);
+if(mouseX>200 && mouseX<400 && mouseY>400&& mouseY<600 && matriz[2][1].getTipo()==0){
+matriz[2][1].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
-if(mouseX>400 && mouseX<600 && mouseY>400&& mouseY<600){
-    matriz[2][2].setTipo(1);
+if(mouseX>400 && mouseX<600 && mouseY>400&& mouseY<600 && matriz[2][2].getTipo()==0){
+    matriz[2][2].setTipo(turno+1);
+    turno=(turno+1)%2;
 }
+}
+function winner(){
+    // ganar filas
+    if(matriz[0][0].getTipo()==matriz[0][1].getTipo() && matriz[0][1].getTipo()==matriz[0][2].getTipo()){
+        //win first row 
+    }
+    if(matriz[1][0].getTipo()==matriz[1][1].getTipo() && matriz[1][1].getTipo()==matriz[1][2].getTipo()){
+    }
+    if(matriz[2][0].getTipo()==matriz[2][1].getTipo() && matriz[2][1].getTipo()==matriz[2][2].getTipo()){
+    }
+     // ganar col
+     if(matriz[0][0].getTipo()==matriz[1][0].getTipo() && matriz[1][0].getTipo()==matriz[2][0].getTipo()){
+    }
+    if(matriz[0][1].getTipo()==matriz[1][1].getTipo() && matriz[1][1].getTipo()==matriz[2][1].getTipo()){
+    }
+    if(matriz[0][2].getTipo()==matriz[1][2].getTipo() && matriz[1][2].getTipo()==matriz[2][2].getTipo()){
+    }
+    //ganar diagonal 
+    if(matriz[0][2].getTipo()==matriz[1][1].getTipo() && matriz[1][1].getTipo()==matriz[2][0].getTipo()){
+    }
+    if(matriz[0][0].getTipo()==matriz[1][1].getTipo() && matriz[1][1].getTipo()==matriz[2][2].getTipo()){
+    }
 
 }
+
