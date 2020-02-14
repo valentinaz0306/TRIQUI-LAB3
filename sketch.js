@@ -82,7 +82,9 @@ function draw() {
             if (ganador != 0) {
                 pantalla = 2;
                 falsoo = false;
-            }
+            }else{  if (ganador == 3) {
+                pantalla = 3;
+                falsoo = false; }}
            
             //Esto es para saber que personaje le toca.
             textSize(50);
@@ -100,6 +102,10 @@ function draw() {
             fill(255, 0, 255);
             text("JUGADOR" + ganador, 110, 360);
             break;
+
+        case 3:
+            
+        break;
     }
 
 }
