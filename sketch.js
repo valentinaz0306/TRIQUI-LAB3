@@ -21,6 +21,7 @@ function preload() {
     menu = loadImage('Imagenes/Menu.jpg');
     menu2 = loadImage('Imagenes/Menu2.jpg');
     winStage = loadImage('Imagenes/Ganador.jpg');
+    m_bg= loadSound("Musica/m_bg.mp3");
 }
 function setup() {
     createCanvas(600, 700);
@@ -32,15 +33,32 @@ function setup() {
         }
     }
     falsoo = true;
+
+    //Musica
+    m_bg.play();
+    m_bg.setVolume(0.2);
+
+
 }
 
 function draw() {
     switch (pantalla) {
         case 0:
+
+
+        //Cancion del menu
+       
+
             background(0);
             //la imagen del menu
             image(menu, 0, 0);
+             //Interaccion del mouse al pasar por el boton de start
+             if (mouseX > 258 && mouseX <= 348 && mouseY > 530 && mouseY <= 575) {
+                image(menu2, 0,0);
+            }
+    
             break;
+
         case 1:
             background(0);
             // pintar cuadricula 
@@ -72,10 +90,10 @@ function draw() {
             turnoSuma = turno + 1;
             text("Turno:",50, 650);
             text("Jugador" + turnoSuma, 260, 650);
-            if (mouseX > 258 && mouseX <= 348 && mouseY > 530 && mouseY <= 575) {
-                image(menu2, 0,0);
-            }
+
+
             break;
+           
         case 2:
             image(winStage, 0, 0);
             textSize(72);
