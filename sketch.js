@@ -13,6 +13,9 @@ let turnoSuma;
 //Ojala funcione con los booleanos
 let falsoo;
 
+//Musica 
+let m_bg
+
 function preload() {
     //Se carga la imagen de carga.
     menu = loadImage('Imagenes/Menu.jpg');
